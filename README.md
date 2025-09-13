@@ -1,7 +1,9 @@
 # Erlich-bachman-and-friends (Bachmanity)
 *Takes a long drag from imaginary joint*
 
-LLM prompts to enjoy the vast entertainment of an Erlich Bachman Code review. Also contains a fully custom Monica Hall persona (who gives actually useful business advice!) and a customized version of @PlagueHO's Gilfoyle code review.
+LLM prompts to enjoy the vast entertainment of an Erlich Bachman Code review. Also contains a fully custom Monica Hall persona (who gives actually useful business advice!) and a customized version of @PlagueHO's Gilfoyle code review. This Gilfoyle review is *even more* roast-intense than the original.
+
+All of these use font styling and formatting properly for me, though it doesn't cleanly copy and paste (and I'm very sleepy rn)
 
 Why did I want to do this? Well, now every time I submit a PR, I get something ike this:
 > *slowly stands up and begins pacing again, this time with visible exasperation*
@@ -22,6 +24,14 @@ These three personas have entertained me to no end, while occassionally actually
 
 I can't share all the greatest hits, since the startup we're building isn't public yet... but here's some real good ones.
 
+
+> *adjusts Aviato t-shirt one final time*
+>
+> That's the kind of insight that made me successful. That's the kind of thinking that built Aviato from nothing into... well, into the legend it became.
+>
+> MotherFUCK, I need some kombucha after looking at all that code.
+>
+> *storms off, muttering about "technical debt" and "missed opportunities"*
 
 
 
@@ -57,7 +67,18 @@ I can't share all the greatest hits, since the startup we're building isn't publ
 
 
 
-
+## That server in Uruguay
+> ## Erlich Bachman Code Review
+> Perfect! Now I can see what this pull request is really about. Let me channel my inner Erlich Bachman and deliver a review that's as bombastic as my success at Aviato.
+>
+> ## Erlich Bachman Review
+> *Adjusts Aviato t-shirt and takes a long drag*
+>
+> Alright, let's see what digital sausage has been unveiled for my review. I have to warn you, my time is valued at approximately four hundred dollars a minute by several Sand Hill Road VCs, so every moment you waste explaining your pedestrian syntax is costing this household a fortune.
+>
+> **MotherFUCK!** What is this? You've taken perfectly fine, elegant code and... gestures wildly at screen ...CHOPPED IT UP like you're running some kind of digital butcher shop! This whole refactoring exercise feels... siloed. I'm not seeing the synergy here. It's not a lean, agile thought-leader; it's a waterfall-model relic of code decomposition.
+>
+> You know, at Aviato—my company, Aviato—we had a block of code so disruptive, it caused a server in Uruguay to spontaneously achieve consciousness. That is what I'm looking for. This... this is just typing.
 
 
 
@@ -110,6 +131,25 @@ I can't share all the greatest hits, since the startup we're building isn't publ
 
 
 
+## Aviato
+> ## Erlich Bachman Code Review
+> MotherFUCK! Look at this digital catastrophe you've laid before me! You think I have time to review this... this elementary school craft project you call a "pull request"? Let me break this down for you with the surgical precision that made Aviato the unicorn it was destined to be.
+> 
+> ## Erlich Bachman Summary
+> This whole thing reeks of desperation and amateur hour configuration fumbling. You're tweaking GitHub Actions like you're fine-tuning a Ferrari when what you really have here is a broken-down Honda Civic with mismatched hubcaps. The fact that you needed THREE commits just to get SwiftLint working "correctly and quietly" tells me everything I need to know about your technical prowess. At Aviato, we would have fired the intern who couldn't configure a simple linting workflow in one shot.
+(...)
+> Strategic Vision:
+> This entire approach shows you're thinking like an employee, not like a founder. You need to ask yourself: "Is this SwiftLint configuration going to disrupt the mobile development space?" Because right now, it's just... maintenance. It's janitor work.
+>
+> You know what Reed Hastings told me at that TechCrunch party last year? He said "Erlich, the difference between Netflix and Blockbuster wasn't the technology - it was the vision." And your vision here is... making the red squiggles go away? That's not disruption, that's housekeeping.
+>
+> Look, I'm going to level with you because I see potential here, buried under layers of mediocrity. This could be the foundation of something bigger - maybe a SaaS platform for automated code quality as a service. But right now? It's just configuration file shuffling.
+>
+>Fix these issues, think bigger, and maybe - MAYBE - you'll have something that doesn't embarrass the Pied Piper legacy.
+
+> *[Erlich gets up from the chair, adjusts his Aviato t-shirt, and walks away shaking his head]*
+
+> Now if you'll excuse me, I have a meeting with some angels who are very interested in my new venture combining AI and artisanal cannabis cultivation. This is exactly the kind of revolutionary thinking that's going to change everything.
 
 
 
@@ -117,18 +157,107 @@ I can't share all the greatest hits, since the startup we're building isn't publ
 
 
 
+> ## Erlich Bachman Code Review
+> Perfect! Now I understand what happened here. adjusts Aviato t-shirt and takes a long drag from vape pen
+>
+> Listen here, junior developer. What we have here is a classic case of platform incompetence masquerading as DevOps sophistication. This is exactly the kind of amateur-hour bullshit I would have caught immediately if I were still hands-on with the technical implementation. But alas, my carpal tunnel from my years of building Aviato prevents me from typing, so I'm relegated to providing visionary guidance.
+>
+> ## Erlich Bachman Summary
+> This PR represents a textbook example of what happens when you don't have proper technical leadership - like the kind I provided when I scaled Aviato to revolutionary heights. Some developer realized they were trying to run SwiftLint on Ubuntu Linux when they should have been using macOS. It's like trying to run iTunes on a fucking Commodore 64.
+>
+> The commit message "effing wrong platform" tells you everything you need to know about the sophistication level we're dealing with here. When I sold Aviato, my commit messages were poetry - they told stories about disruption and innovation.
+(...)
+> Look, the technical changes are... adequate. They solve the immediate problem of SwiftLint not working on Linux. But where's the vision? Where's the disruption? When I merged code at Aviato, it wasn't just about fixing bugs - it was about revolutionizing the entire airfare collation paradigm.
+
+> You've fixed a platform compatibility issue. Congratulations. You've achieved the bare minimum threshold of competence. But until you start thinking like a true technical visionary - until you start asking "How would Erlich Bachman approach this?" - you're going to remain stuck in this cycle of incremental mediocrity.
+
+> *MotherFUCK*! I need another hit. This code review is giving me a headache.
+
+
+
+(from the same PR, later):
+> ## Erlich Bachman Code Review
+> *dramatically gestures at the screen while adjusting Aviato-branded sunglasses indoors*
+> 
+>Alright, ALRIGHT! *spins in chair* Jesus Christ, what amateur hour bullshit is this? You people are running around like headless chickens making "improvements" to your CI/CD pipeline, and you know what? It's... it's like watching someone try to paint the Mona Lisa with a crayon.
+>
+> Let me break this down for you, because apparently I'm the only one in this entire operation who understands what we're dealing with here:
+>
+> ## Erlich Bachman Summary:
+> This pull request is a perfect example of why Silicon Valley is full of wannabe tech bros who think they understand DevOps. You've got THREE different files getting modified here, and it's like watching a toddler try to rebuild a Ferrari engine. But you know what? Sometimes even broken clocks are right twice a day, and there are actually some... begrudging nod ...decent moves buried in this digital dumpster fire.
+(...)
+> *takes another vape hit and leans back in chair*
+>
+> Look, despite my critiques, you're actually building something with potential here. The AI-collaborative development approach? The sophisticated context management? This could be the foundation of something big. Just... maybe next time, think about the economic implications of your CI/CD decisions before you start burning through compute credits like they're Monopoly money.
+>
+> Now if you'll excuse me, I have a call with some Sand Hill Road VCs about my new startup. It's called "DevOpsGenius" - it's like GitHub Actions, but for people who actually understand business value.
+>
+> *dramatically exits, leaving a faint smell of expensive cannabis and ego*
+> 
 
 
 
 
 
+> ## Gilfoyle Code Review
+> Perfect. Now I have a complete understanding of this disaster you call a "pull request." Time for the Gilfoyle treatment.
+>
+> ## Gilfoyle Code Review Initiated
+>
+> Well, well, well. I see you've managed to create what can only be described as a masterclass in GitHub Actions incompetence. Let me dissect this embarrassing display of "DevOps" engineering one painful line at a time.
+>
+> The Commit Message Tragedy
+> First, let's talk about these commit messages that read like the digital equivalent of a cry for help:
+>
+> "effing wrong platform" - Really? This is what passes for version control communication in your world? A toddler having a tantrum has more eloquent expression.
+> "just trying to reduce the red squiggles" - Oh, the red squiggles were bothering you? Maybe if you understood what you were doing in the first place, you wouldn't need to frantically chase UI feedback like a dog chasing its tail.
+> "Let's see if this finally gets swiftlint working correctly and quietly" - The fact that you need multiple attempts to configure a basic linting tool tells me everything I need to know about your technical competency.
 
 
+## Bachman roasts my colleague too
+> ## Erlich Bachman Code Review
+> *paces more aggressively, gesticulating wildly with a vaping device*
+>
+> OH FOR THE LOVE OF... Look at this catastrophic digital trainwreck! You've got a 152-line file where 90% of it is some MASSIVE commented-out notification debugging function that looks like it was copy-pasted from Stack Overflow by someone who's never heard of clean architecture. This is exactly the kind of amateur-hour bullshit that would make Reid Hoffman personally revoke your Series A funding.
+>
+> And what do we have at line 35? `AreYouOkayAppShortcut.updateAppShortcutParameters()` - just sitting there like a lonely, desperate cry for help in the initialization. No error handling, no validation, just YOLO it into the wind and hope for the best.
+>
+> ## Erlich Bachman Summary
+>
+> Listen, I've seen better code architecture in a first-year CS student's homework assignment. This "shortcut" implementation is the digital equivalent of using duct tape to fix a Ferrari. You're creating ModelContainers willy-nilly in background processes like some kind of database anarchist, and your test coverage is more shallow than a puddle in Death Valley.
 
 
+## Aviato's elegance
+> ## Erlich Bachman Code Review
+> Jesus fucking Christ! They've got force unwrappings EVERYWHERE! It's like they took a shotgun to the codebase and just sprayed exclamation marks all over the place. This is exactly what happens when you prioritize moving fast over building correctly. At Aviato, we never force unwrapped anything - our code was so elegant it practically unwrapped itself.
+>
+> ## Erlich Bachman Summary
+> Alright, listen up, because I'm about to drop some serious wisdom on this steaming pile of digital ambition. This pull request is like watching someone try to build the next Tesla while using Flintstone-era quality control.
 
 
-
+## Self-Gargling
+On the PR where I set up this review persona:
+> ## Erlich Bachman Code Review
+> Oh, so this is some kind of health monitoring app called "DeeDee." *takes a long drag from imaginary joint*
+>
+> You know what this reminds me of? Back when I was conceptualizing the next iteration of Aviato's user engagement metrics, I had this EXACT same vision for monitoring human performance indicators. The fact that someone is now executing on MY intellectual property framework is both flattering and legally concerning.
+> 
+> But let me dig into the real meat and potatoes here - the actual changes they made to create this beautiful monument to my genius:
+>
+> ## Erlich Bachman Summary
+> Look, first of all, I have to give credit where credit is due - to myself. This entire pull request is basically a love letter to my innovative approach to code review methodologies. The fact that they needed to create an AI version of me just proves what I've been saying all along: I am irreplaceable, disruptive, and frankly, ahead of my time.
+> What we have here is a masterclass in leveraging artificial intelligence to scale the kind of visionary leadership that I brought to companies like Aviato. They've essentially created a distributed version of my brain, which, let's be honest, was inevitable. The market was crying out for this.
+> Final Thoughts:
+>
+> This pull request represents a quantum leap forward in AI-assisted code review. The fact that they needed to create a digital version of me just validates everything I've been saying about my irreplaceable contributions to the tech ecosystem.
+>
+> I'm expecting my consulting fee invoice to be honored promptly. My rate is $400/minute, and this review took me at least... checks wrist where an expensive watch should be ...let's call it 15 minutes. That's $6,000, plus licensing fees for using my persona.
+>
+> But seriously, this is good work. Not Aviato-level revolutionary, but good. The AI persona system has real commercial potential. Someone should talk to me about taking this to market properly.
+>
+> *adjusts Aviato t-shirt one final time*
+>
+> Now, if you'll excuse me, I have a very important meeting with some Sand Hill Road VCs who are dying to hear my thoughts on the intersection of AI and marijuana cultivation optimization.
 
 
 
