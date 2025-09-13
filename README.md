@@ -1,5 +1,17 @@
 # Erlich-bachman-and-friends (Bachmanity)
+*Takes a long drag from imaginary joint*
+
 LLM prompts to enjoy the vast entertainment of an Erlich Bachman Code review. Also contains a fully custom Monica Hall persona (who gives actually useful business advice!) and a customized version of @PlagueHO's Gilfoyle code review.
+
+Why did I want to do this? Well, now every time I submit a PR, I get something ike this:
+> *slowly stands up and begins pacing again, this time with visible exasperation*
+> *dramatically gestures at the screen*
+> 
+> This pull request is a study in contrasts - like watching someone perform brain surgery with a rusty spoon, but then also discovering penicillin by accident.
+> 
+> The dependency cleanup shows actual engineering competence - you identified duplicate iPhoneNumberField references across test targets and removed them cleanly. That's the kind of foundational work that would make even the Aviato engineering team nod in grudging approval.
+
+
 
 
 
@@ -42,6 +54,77 @@ I can't share all the greatest hits, since the startup we're building isn't publ
 >
 > SMS Cost Controls: Add configurable limits on SMS sends per user/per month
 [Monica Hall Code Review](https://github.com/DeeDee-Development/Dee-Dee-iOS/pull/170#issuecomment-3146009211)
+
+
+
+
+
+
+
+
+
+
+### Bachman takes an uncalled-for shot at [zizmor](https://github.com/zizmorcore/zizmor)
+
+> ## Erlich Bachman Code Review
+> MotherFUCK! Alright, let me take a long drag of this perfectly legal herb and digest this... spectacle of mediocrity.
+> 
+> Look at this digital sausage. I've just witnessed what can only be described as a complete demonstration of how NOT to build a unicorn-level disruptive platform. This entire pull request is like watching someone try to fix a Ferrari engine with duct tape and a prayer to the ghost of Steve Wozniak.
+>
+> ## Erlich Bachman Summary
+> This pull request is a masterclass in everything that's wrong with Silicon Valley's current crop of so-called "engineers." We've got business logic scattered around like marijuana seeds at Burning Man, error handling that makes Hooli's compression algorithm look elegant, and - I cannot stress this enough - RAINBOW EMOJIS in production security workflows.
+
+
+
+
+
+> ## Erlich Bachman Code Review
+> UNVEIL THE DIGITAL SAUSAGE TIME
+> 
+> Alright, let's see what pedestrian masterpiece has been laid before me. I have to warn you, my time is valued at approximately four hundred dollars a minute by several Sand Hill Road VCs, so every moment you waste explaining your simplistic code organization is costing this household a fortune.
+> 
+> *paces dramatically behind your workstation, peering over your shoulder with theatrical disdain*
+> 
+> What I see here is a... comprehensive attempt at what you probably think is "professional development." But let me break down what's really happening from someone who revolutionized the airfare collator industry with Aviato.
+> 
+> ## Erlich Bachman Summary
+> What we have here is a classic case of "doing work" versus "being disruptive." This pull request is the digital equivalent of rearranging deck chairs on the Titanic while claiming you've redesigned the naval industry. You've spent considerable effort creating what amounts to a bureaucracy of files and configurations when you could have been building the next WhatsApp for seniors.
+> 
+> The SMS service? It's... adequate. Basic. Like something a Hooli intern would cobble together during their lunch break. But the real tragedy here is the HOURS of developer time wasted on linting configurations and anti-pattern documentation when you should be capturing market share from your competitors.
+ (....later in the review...)
+> ## Final Thoughts:
+> Look, the technical execution is... competent. Your error handling won't crash the app, your accessibility labels might help some seniors, and your linting rules will keep your code clean.
+>
+> But competent doesn't create unicorns. Competent doesn't get you featured on TechCrunch. Competent doesn't make VCs fight over your Series A.
+>
+> What you need is vision. Disruption. The kind of paradigm-shifting innovation that made Aviato the household name it became.
+>
+> *dramatically gestures at the screen*
+>
+> This code will function. But will it change the world? That remains to be seen.
+>
+> MotherFUCK, I need a bowl after reviewing all this bureaucratic overhead...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -103,6 +186,3 @@ This one is unrelated, but still entertains me
 
   Sleep well! The system will keep learning and improving while you rest. 🌙
 ```
-
-
-
