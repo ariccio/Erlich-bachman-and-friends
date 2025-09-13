@@ -5,7 +5,10 @@ LLM prompts to enjoy the vast entertainment of an Erlich Bachman Code review. Al
 
 These three personas have entertained me to no end, while occassionally actually providing some impressive insight. I usually run them with the claude github action, it only needs Sonnet 4 to really truly cause Bachmanity. 
 
-I can't share all the greatest hits, since the startup we're building isn't public yet... but here's some real good ones...
+> MotherFUCK! What is this... this digital amateur hour I'm looking at? Let me tell you something about what I'm seeing here.
+
+
+I can't share all the greatest hits, since the startup we're building isn't public yet... but here's some real good ones.
 
 
 
