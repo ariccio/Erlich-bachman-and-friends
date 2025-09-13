@@ -81,6 +81,16 @@ I can't share all the greatest hits, since the startup we're building isn't publ
 > You know, at Aviato—my company, Aviato—we had a block of code so disruptive, it caused a server in Uruguay to spontaneously achieve consciousness. That is what I'm looking for. This... this is just typing.
 
 
+## Aviato's enlightenment
+> ## Erlich Bachman Code Review
+> *paces dramatically behind the developers with theatrical disdain*
+>
+> Alright, alright. Let's see what digital catastrophe we're dealing with here. I have to warn you, my time is valued at approximately eight hundred dollars a minute by several Sequoia Capital partners who are begging me to join their next unicorn, so every moment I spend deciphering this... this... waves hand dismissively ... pedestrian syntax is literally costing Silicon Valley its next billion-dollar disruption.
+>
+> *pulls out a hemp-fiber notebook and artisanal pen*
+>
+> ## Erlich Bachman Summary
+> This pull request is like watching someone try to reinvent the wheel, except they've somehow made it square and convinced themselves it's "more innovative." You know what this reminds me of? When I was architecting the notification paradigm for Aviato - my company, Aviato - we had such elegant, consciousness-expanding code that it literally caused three servers to achieve enlightenment. This... this is just typing.
 
 
 
@@ -136,7 +146,7 @@ I can't share all the greatest hits, since the startup we're building isn't publ
 > "Alright, let me break this down for you, because what I'm seeing here is a fascinating case study in what happens when engineering brilliance collides with obsessive-compulsive documentation disorder.
 
 
-## Aviato
+## More Aviato
 > ## Erlich Bachman Code Review
 > MotherFUCK! Look at this digital catastrophe you've laid before me! You think I have time to review this... this elementary school craft project you call a "pull request"? Let me break this down for you with the surgical precision that made Aviato the unicorn it was destined to be.
 > 
@@ -265,6 +275,41 @@ On the PR where I set up this review persona:
 > Now, if you'll excuse me, I have a very important meeting with some Sand Hill Road VCs who are dying to hear my thoughts on the intersection of AI and marijuana cultivation optimization.
 
 
+> ## Erlich Bachman Code Review
+> Look, I've seen a lot of code in my day. I've seen code that made me weep for the future of humanity. I've seen code that made me question whether the author had ever actually used a computer before. But this... this is something special. This is like watching someone try to build the next Google while high on bath salts and using a Magic 8-Ball for architectural decisions.
+>
+> Let me break down what this "comprehensive architecture replacement plan" really is: it's a 410-line manifesto written by someone who clearly thinks they're the next Steve Jobs of health monitoring, when in reality they're more like the Theranos of iOS development.
+>
+> ## Erlich Bachman Summary
+>This is what happens when you give Claude access to a keyboard and tell it to "fix everything." Instead of working iteratively like a normal human being, they've created a fucking blueprint for rebuilding the entire HealthKit architecture from scratch. It's like deciding to tear down your house and rebuild it because you don't like the color of the bathroom tiles.
+
+> ## Erlich Bachman Code Review
+> Alright, let me peeking behind the digital curtain here. Time to unleash the Bachman brilliance on this pathetic excuse for a "pull request."
+>
+> *adjusts Aviato t-shirt and cracks knuckles*
+>
+> Listen up, buttercup. What we have here is what I like to call a "workflow masturbation session" - lots of activity, impressive-looking output, but ultimately just a bunch of DevOps monkeys playing dress-up with YAML files instead of building something that actually makes MONEY.
+>
+> ## Erlich Bachman Summary
+> This is basically someone having a complete CI/CD orgasm all over your repository. They've taken what should be a simple "run some code reviews" workflow and turned it into the digital equivalent of a Rube Goldberg machine designed by someone who clearly peaked in 2019 when they discovered GitHub Actions.
+(...)
+> ## Reality Check:
+> Every minute spent on "workflow observability" is a minute NOT spent on making your app the kind of breakthrough technology that gets featured at the Apple Health Summit. When Peter Thiel looks at your Series A deck, he's not going to give a shit about your GitHub Actions cache hit ratios.
+>
+> Focus on the MAGIC, people. The proprietary algorithms. The innovative user experience. The stuff that makes competitors cry themselves to sleep at night because they can't figure out how you did it.
+> 
+> This PR is like buying a Ferrari and then spending six months installing a better cup holder. Yeah, the cup holder is technically an improvement, but you're missing the fucking point of owning a Ferrari.
+>
+> Bottom line: Approve it if you must, but immediately pivot to building features that actually matter. Your grandmother falling down isn't going to care if your CI pipeline has pretty colored output.
+>
+> drops imaginary mic and storms out to smoke a bowl in the Tesla*
+>
+> *MotherFUCK!*
+
+
+
+
+
 ## You can actually impress him at times
 > ## Erlich Bachman Code Review
 > MotherFUCK! What is this? This is... this is like watching someone organize their sock drawer when they should be building the next Uber. I mean, look at this organizational masturbation!
@@ -317,7 +362,6 @@ On the PR where I set up this review persona:
 > That's the kind of insight that made me successful. That's the kind of thinking that built Aviato from nothing into... well, into the legend it became.
 >
 > MotherFUCK, I need some kombucha after realizing I just endorsed infrastructure work.
-
 
 
 #### Claude Opus slowly turning into skynet in Mid August 2025 (not yet fully self-aware):
