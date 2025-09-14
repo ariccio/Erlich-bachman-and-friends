@@ -1,0 +1,303 @@
+---
+name: AI Code Review - Custom Personas
+
+"on":
+  pull_request_target:
+    types: [closed]
+
+jobs:
+  # Job to batch all persona reviews and avoid spam
+  ai-code-review-personas:
+    runs-on: ubuntu-latest
+    # Skip bots (matrix context not available at job level)
+    if: >
+      github.event.pull_request.merged == true &&
+      github.actor != 'dependabot[bot]' &&
+      github.actor != 'github-actions[bot]'
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    strategy:
+      max-parallel: 1
+      matrix:
+        persona: [gilfoyle, monica, bachman]
+        # So far these guys just seem to be noisy and not very useful
+        # persona: [gilfoyle, sheriff, safety-review]
+
+    steps:
+      - name: Workflow Start - Log Environment
+        env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          TRIGGERED_BY: ${{ github.actor }}
+        run: |
+          echo "AI Code Review workflow started at $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          echo "Persona: ${{ matrix.persona }}"
+          echo "Runner: ${{ runner.os }} on ${{ runner.arch }}"
+          echo "Event: ${{ github.event_name }} for PR #${{ github.event.pull_request.number }}"
+          echo "PR Author: $PR_AUTHOR"
+          echo "Triggered by: $TRIGGERED_BY"
+          echo "Workflow run: ${{ github.run_number }}"
+          echo "::group::Environment Information"
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          echo "Available disk space:"
+          df -h | head -5
+          echo "Memory info:"
+          free -h 2>/dev/null || echo "Memory info not available"
+          echo "::endgroup::"
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Log Repository Information
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          echo "::group::Repository Information"
+          echo "Repository: ${{ github.repository }}"
+          echo "Current commit: $(git rev-parse HEAD)"
+          echo "Base branch: $BASE_REF"
+          echo "Head branch: $HEAD_REF"
+          echo "Files changed in PR:"
+          git diff --name-only "origin/$BASE_REF...HEAD" | head -20
+          echo "Total files changed: $(git diff --name-only "origin/$BASE_REF...HEAD" | wc -l)"
+          echo "::endgroup::"
+
+      - name: Cache GitHub Actions dependencies
+        uses: actions/cache@v4
+        id: cache-dependencies
+        with:
+          path: |
+            ~/.cache/github-actions
+            ~/.npm/_cacache
+          key: ${{ runner.os }}-github-actions-${{ hashFiles('.github/workflows/*.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-github-actions-
+
+      - name: Cache Results Report
+        run: |
+          echo "::group::Cache Performance Report"
+          if [[ "${{ steps.cache-dependencies.outputs.cache-hit }}" == "true" ]]; then
+            echo "✓ Cache HIT - Dependencies restored from cache"
+            echo "Estimated time saved: 10-30 seconds"
+          else
+            echo "✗ Cache MISS - Dependencies will be downloaded"
+            echo "This helps improve cache for future runs"
+          fi
+          echo "Cache key: ${{ runner.os }}-github-actions-${{ hashFiles('.github/workflows/*.yml') }}"
+          echo "::endgroup::"
+
+      - name: Set persona configuration
+        id: config
+        run: |
+          echo "Configuring persona settings..."
+          chmod +x ./scripts/configure-ai-review-persona.sh
+          ./scripts/configure-ai-review-persona.sh "${{ matrix.persona }}"
+
+      - name: Check API key configuration
+        run: |
+          echo "Checking API key configuration..."
+          if [ -z "${{ secrets.ANTHROPIC_API_KEY }}" ]; then
+            echo "✗ ANTHROPIC_API_KEY secret not configured!"
+            echo "Please see .github/AI_CODE_REVIEW_SETUP.md for setup instructions"
+            exit 1
+          else
+            echo "✓ ANTHROPIC_API_KEY is configured"
+            echo "API key length: $(echo '${{ secrets.ANTHROPIC_API_KEY }}' | wc -c) characters"
+          fi
+
+      - name: Read persona instructions
+        id: instructions
+        env:
+          INSTRUCTIONS_FILE: ${{ steps.config.outputs.instructions_file }}
+        run: |
+          echo "Reading persona instructions from: $INSTRUCTIONS_FILE"
+          if [ -f "$INSTRUCTIONS_FILE" ]; then
+            echo "✓ Instructions file found"
+            echo "instructions_exist=true" >> $GITHUB_OUTPUT
+            # Get file size for logging
+            FILE_SIZE=$(wc -c < "$INSTRUCTIONS_FILE")
+            echo "Instructions file size: $FILE_SIZE bytes"
+            # Read the instructions and create a system message
+            INSTRUCTIONS=$(cat "$INSTRUCTIONS_FILE")
+            echo "instructions_content<<EOF" >> $GITHUB_OUTPUT
+            echo "$INSTRUCTIONS" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            echo "✓ Instructions loaded successfully"
+          else
+            echo "✗ Instructions file not found: $INSTRUCTIONS_FILE"
+            echo "instructions_exist=false" >> $GITHUB_OUTPUT
+            echo "Expected location: $INSTRUCTIONS_FILE"
+            echo "Searching for similar files..."
+            find .github -name "*$(basename "$INSTRUCTIONS_FILE")*" -type f || echo "No similar files found"
+            echo "Available instruction files:"
+            ls -la .github/copilot-instructions*.md 2>/dev/null || echo "No instruction files found"
+          fi
+
+      - name: AI Code Review - ${{ steps.config.outputs.persona_name }}
+        id: claude-review
+        # Apply selective persona filtering:
+        # - Gilfoyle persona always runs for all users
+        # - Monica and Bachman personas are skipped for ybressler, copilot, and copilot-swe-agent PRs
+        if: >
+          steps.instructions.outputs.instructions_exist == 'true' &&
+          (
+            matrix.persona == 'gilfoyle' ||
+            (
+              matrix.persona != 'gilfoyle' &&
+              github.actor != 'ybressler' &&
+              github.actor != 'copilot' &&
+              github.actor != 'copilot-swe-agent'
+            )
+          )
+        uses: anthropics/claude-code-base-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          model: ${{ steps.config.outputs.model }}
+          allowed_tools: "Bash(git diff --name-only origin/main...HEAD),Bash(git diff --minimal origin/main...HEAD),View,GlobTool,GrepTool,LS,Bash(git log:*),Bash(git show:*),Bash(git whatchanged:*)"
+          system_prompt: |
+            You are conducting a code review as the "${{ steps.config.outputs.persona_name }}" persona.
+
+            Follow these specific instructions for your persona:
+
+            ${{ steps.instructions.outputs.instructions_content }}
+
+            Focus your review on the areas most relevant to this persona:
+            - Gilfoyle: Technical superiority, architecture critique, performance shaming, security mockery
+            - Erlich Bachman: Business ego, bombastic arrogance, taking credit, random tech critiques, marijuana references
+
+            Provide your feedback in the style and tone defined in the persona instructions above.
+            Start your review with a clear indication of which persona is reviewing.
+
+            You have access to MCP servers including context7 which provides library documentation.
+            Use /swiftlang/swift, /zhangyu1818/swiftui.md, and other relevant library IDs when needed.
+          prompt: |
+            Review the changes in this pull request as the ${{ steps.config.outputs.persona_name }} persona.
+
+            Please:
+            1. Use git commands to see what files changed and examine the diff
+            2. Focus on files with these extensions: .swift, .md, .m, .h, .mm, .cpp, .c, .json, .plist, .yml, .yaml, .sh, .rb, and any extensionless-files that are commonly used for specific tools relevant to this project.
+            3. Exclude build artifacts and system files (dist/, build/, DerivedData/, node_modules/, Pods/, *.xcuserstate, *.xcworkspace, *.xcodeproj)
+            4. Provide detailed feedback following your persona's style and focus areas
+            5. Structure your final response as markdown with:
+               - **${{ steps.config.outputs.bot_icon }}${{ steps.config.outputs.persona_name }} Summary**: Key issues from this persona's perspective
+               - **Key Concerns**: Most important issues to address
+               - **Recommendations**: Specific actionable recommendations
+
+            Stay in character as defined in the persona instructions and use the appropriate tone.
+
+      - name: Extract and Post Review Comment
+        if: >
+          steps.claude-review.outputs.conclusion == 'success' &&
+          (
+            matrix.persona == 'gilfoyle' ||
+            (
+              matrix.persona != 'gilfoyle' &&
+              github.actor != 'ybressler' &&
+              github.actor != 'copilot' &&
+              github.actor != 'copilot-swe-agent'
+            )
+          )
+        run: |
+          echo "Processing review comment with Node.js script..."
+          node ./scripts/process-ai-review-comment.js \
+            "${{ steps.claude-review.outputs.execution_file }}" \
+            "${{ steps.config.outputs.start_time }}" \
+            "${{ steps.config.outputs.persona_name }}" \
+            "${{ steps.config.outputs.bot_icon }}" > comment_output.txt
+          
+          echo "Comment processing completed"
+          if [[ -f comment_output.txt ]]; then
+            echo "✓ Comment output file generated"
+            cat comment_output.txt
+          else
+            echo "⚠ No comment output file generated"
+          fi
+
+      - name: Post GitHub Comment
+        if: >
+          steps.claude-review.outputs.conclusion == 'success' &&
+          (
+            matrix.persona == 'gilfoyle' ||
+            (
+              matrix.persona != 'gilfoyle' &&
+              github.actor != 'ybressler' &&
+              github.actor != 'copilot' &&
+              github.actor != 'copilot-swe-agent'
+            )
+          )
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            
+            // Read the comment body from the output file
+            let commentBody = '';
+            try {
+              const output = fs.readFileSync('comment_output.txt', 'utf8');
+              // Extract comment body between markers
+              const startMarker = 'COMMENT_BODY<<EOF';
+              const endMarker = 'EOF';
+              const startIndex = output.indexOf(startMarker);
+              const endIndex = output.lastIndexOf(endMarker);
+              
+              if (startIndex !== -1 && endIndex !== -1) {
+                commentBody = output.substring(startIndex + startMarker.length, endIndex).trim();
+              } else {
+                throw new Error('Comment markers not found');
+              }
+            } catch (error) {
+              console.error('✗ Error reading comment output:', error.message);
+              return;
+            }
+
+            if (commentBody) {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: commentBody
+              });
+              console.log(`✓ Posted ${{ steps.config.outputs.persona_name }} review comment successfully`);
+            } else {
+              console.warn('⚠ No comment body to post');
+            }
+
+      - name: Persona Workflow Summary
+        if: always()
+        run: |
+          echo "::group::Persona Workflow Summary"
+          echo "${{ steps.config.outputs.persona_name }} review completed at $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          echo "Persona: ${{ matrix.persona }}"
+          echo "Steps executed:"
+          echo "  ✓ Environment logging"
+          echo "  ✓ Repository checkout"
+          echo "  ✓ Cache management"
+          echo "  ✓ Persona configuration"
+          echo "  ✓ API key validation"
+          echo "  ✓ Instructions loading"
+          if [[ "${{ steps.claude-review.outputs.conclusion }}" == "success" ]]; then
+            echo "  ✓ AI review execution"
+            echo "  ✓ Comment processing"
+          else
+            echo "  ✗ AI review execution failed"
+          fi
+          echo "Workflow run URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          echo "::endgroup::"
+
+      - name: Debug Workflow Issues on Failure
+        if: failure()
+        run: |
+          echo "::group::Automatic Workflow Debug Information"
+          echo "Workflow failure detected - gathering debug information..."
+          
+          # Make debug script executable and run it
+          chmod +x ./scripts/debug-workflow-issues.sh
+          ./scripts/debug-workflow-issues.sh "AI-Code-Review-Personas"
+          echo "::endgroup::"
