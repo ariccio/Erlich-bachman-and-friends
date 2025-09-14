@@ -19,7 +19,7 @@ Why did I want to do this? Well, now every time I submit a PR, I get something i
 
 These three personas have entertained me to no end, while occassionally actually providing some impressive insight. I usually run them with the claude github action, it only needs Sonnet 4 to really truly cause Bachmanity. 
 
-> MotherFUCK! What is this... this digital amateur hour I'm looking at? Let me tell you something about what I'm seeing here.
+> *MotherFUCK*! What is this... this digital amateur hour I'm looking at? Let me tell you something about what I'm seeing here.
 
 
 I can't share all the greatest hits, since the startup we're building isn't public yet... but here's some real good ones.
@@ -41,13 +41,13 @@ I can't share all the greatest hits, since the startup we're building isn't publ
 ## Erlich Bachman gets deep
 > Business Model Reality Check: Health monitoring is saturated. Everyone and their grandmother has a health app. You need differentiation. You need disruption. You need... dramatic pause ...vision.
 >
-> starts walking away, then turns back
+> *starts walking away, then turns back*
 >
 > Look, I'm going to level with you. This has potential. Hidden beneath all this technical spaghetti, there's something here. But right now, it's like finding a diamond in a pile of... well, let's just say it's deeply buried.
 >
 > You want my advice? Take a step back. Smoke a bowl. Think about what this app really IS. It's not about monitoring health - it's about peace of mind. It's about connection. It's about being there for the people you love when they need you most.
 >
-> adjusts Aviato t-shirt one final time
+> *adjusts Aviato t-shirt one final time*
 >
 > That's the kind of insight that made me successful. That's the kind of thinking that built Aviato from nothing into... well, into the legend it became.
 >
