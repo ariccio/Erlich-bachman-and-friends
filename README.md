@@ -320,7 +320,7 @@ On the PR where I set up this review persona:
 >
 > You know what this reminds me of? The time at Aviato - MY company, Aviato - when I had to tell my lead engineer to stop building the perfect deployment pipeline and start building the actual feature that users were begging for. Because that's what you do when you understand BUSINESS.
 >
-> But wait... `squints at the code`
+> But wait... *squints at the code*
 >
 > Actually, hold up. Let me take a closer look at this digital disaster...
 > 
