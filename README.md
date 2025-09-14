@@ -1,7 +1,7 @@
 # Erlich-bachman-and-friends (Bachmanity)
 *Takes a long drag from imaginary joint*
 
-LLM prompts to enjoy the vast entertainment of an Erlich Bachman Code review. Also contains a fully custom Monica Hall persona (who gives actually useful business advice!) and a customized version of @PlagueHO's Gilfoyle code review. This Gilfoyle review is *even more* roast-intense than the original.
+LLM prompts to enjoy the vast entertainment of an Erlich Bachman Code review. Also contains a fully custom Monica Hall persona (who gives actually useful business advice when configured with something better than haiku!) and a customized version of @PlagueHO's Gilfoyle code review. This Gilfoyle review is *even more* roast-intense than the original.
 
 All of these use font styling and formatting properly for me, though it doesn't cleanly copy and paste (and I'm very sleepy rn)
 
