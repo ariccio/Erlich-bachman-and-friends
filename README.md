@@ -108,6 +108,13 @@ I can't share all the greatest hits, since the startup we're building isn't publ
 
 
 
+## Jian Yang?
+> ## The Fucking Language
+> Look, I appreciate passion in engineering - God knows I've screamed "MOTHERFUCK" at Jian Yang more times than I can count - but putting "fucking" in your TODO comments? That's not disruptive, that's just... amateur hour. When Peter Gregory reviewed Aviato's codebase, every comment was a haiku of technical excellence. This? This is bathroom graffiti.
+
+
+
+
 
 > ## Erlich Bachman Code Review
 > UNVEIL THE DIGITAL SAUSAGE TIME
